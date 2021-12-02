@@ -1,7 +1,8 @@
 import React from 'react';
 import style from './homePage.module.scss'
+import {GameItem} from "../../components/game-item";
 
-type GamesType = {
+export type GamesType = {
     image: string
     title: string
     genres: string[]
@@ -71,17 +72,7 @@ const GAMES: GamesType[] = [
 export const HomePage = () => {
     return (
         <div className={style.container}>
-            {GAMES.map(g => {
-                return (
-                    <>
-                        <img src={g.image} className={style.image}/>
-                        <h3>{g.title}</h3>
-                        <div>{g.genres}</div>
-                        <div>{g.price}</div>
-                        <div>{g.description}</div>
-
-                    </>)
-            })}
+           <GameItem games={GAMES}/>
         </div>
     );
 };
