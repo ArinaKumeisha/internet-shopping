@@ -5,17 +5,46 @@
   text-decoration: none;
   cursor: pointer;
 
+
   .details {
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 350px;
+    min-height: 350px;
     background-color: #1f1f36;
     border-radius: 15px;
-    margin-bottom: 30px;
-    padding: 20px;
+    margin: 15px;
+    align-items: center;
+    text-align: center;
+    position: relative;
 
     .image {
-      width: 350px;
+      width: 100%;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    .title {
+      margin: 15px 0 15px 0;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+
+    .description {
+
+    }
+
+    .genre {
+      margin-top: 15px;
+
+
+    }
+
+    .buy {
+      right: 0;
+      bottom: -12px;
+      position: absolute;
     }
   }
 }

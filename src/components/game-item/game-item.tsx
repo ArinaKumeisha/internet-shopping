@@ -1,26 +1,28 @@
 import React from 'react';
 import {GamesType} from "../../Pages/home-page";
 import style from './game-item.module.scss'
+import {GameBuy} from "../game-buy";
+import {Genre} from "../genre";
 
-interface PropsType {
-    games: GamesType[]
+type PropsType = {
+    game: GamesType
 }
 
-export const GameItem: React.FC<PropsType> = props => {
-    const {games} = props
+export const GameItem = (props: PropsType) => {
+    const {game} = props
     return (
         <div className={style.container}>
-            {games.map(game => {
-                return (
-                    <div className={style.details}>
-                        <div><img src={game.image} className={style.image}/></div>
-                        <span>{game.title}</span>
-                        <div>{game.price}</div>
-                        <div>{game.description}</div>
-                        {game.genres.map(g => (
-                            <div>{g}</div>))}
-                    </div>)
-            })}
+            <div className={style.details} key={game.id}>
+                <div><img src={game.image} className={style.image}/></div>
+                <span className={style.title}>{game.title}</span>
+
+                <div className={style.genre}>{game.genres.map((genre) => (
+                    <Genre key={genre} genre={genre}/>))}
+                </div>
+                <div className={style.buy}>
+                    <GameBuy game={game}/>
+                </div>
+            </div>
         </div>)
 }
 
