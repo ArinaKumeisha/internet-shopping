@@ -17,7 +17,7 @@ export const SuperButton = ({
                                 children,
                                 size = 's'
                             }: PropsType) => {
-    const btnClass = classNames({
+    const btnClass = classNames({    //библиотеку classNames необходимо установить
         'btn': true,
         'btn--secondary': type === 'secondary',
         'btn--primary': type === 'primary',

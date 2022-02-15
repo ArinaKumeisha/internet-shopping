@@ -12,7 +12,7 @@ export const GameBuy: React.FC<PropsType> = props => {
     return (
             <div className={style.container}>
                 <span className={style.price}>{game.price}</span>
-                <SuperButton onClick={()=>null} type='primary'>
+                <SuperButton onClick={()=> null } type='primary'>
                     В корзину
                 </SuperButton>
             </div>
